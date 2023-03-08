@@ -1,0 +1,10 @@
+#!/bin/bash
+
+export DISPLAY=:10.0
+
+cd /config
+
+su -c scrot abc
+
+exit
+

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+docker run -d \
+  --name=$1 \
+  --security-opt seccomp=unconfined `#optional` \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Etc/UTC \
+  -p 3005:3000 \
+  -v /$1:/config \
+  --shm-size="1gb" \
+  --restart unless-stopped \
+  dockerfirefox
+
+
